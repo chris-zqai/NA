@@ -1,0 +1,66 @@
+{
+  "name": "N-Able",
+  "type": "nAble",
+  "group": ["transform"],
+  "version": 1,
+  "description": "Interact with N-Able API",
+  "defaults": {
+    "name": "N-Able",
+    "color": "#1F72E6"
+  },
+  "inputs": ["main"],
+  "outputs": ["main"],
+  "properties": [
+    {
+      "displayName": "JWT Token",
+      "name": "jwtToken",
+      "type": "string",
+      "default": "",
+      "placeholder": "Your JWT Token",
+      "description": "The JWT token for authentication",
+      "required": true
+    },
+    {
+      "displayName": "Endpoint",
+      "name": "endpoint",
+      "type": "string",
+      "default": "",
+      "placeholder": "API Endpoint",
+      "description": "The API endpoint to call",
+      "required": true
+    },
+    {
+      "displayName": "Method",
+      "name": "method",
+      "type": "options",
+      "options": [
+        {
+          "name": "GET",
+          "value": "GET"
+        },
+        {
+          "name": "POST",
+          "value": "POST"
+        }
+      ],
+      "default": "GET",
+      "description": "The HTTP method to use",
+      "required": true
+    },
+    {
+      "displayName": "Body",
+      "name": "body",
+      "type": "json",
+      "default": "",
+      "placeholder": "{\"key\": \"value\"}",
+      "description": "The JSON body for POST requests",
+      "displayOptions": {
+        "show": {
+          "method": [
+            "POST"
+          ]
+        }
+      }
+    }
+  ]
+}
